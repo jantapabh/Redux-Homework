@@ -3,13 +3,15 @@ import axios from 'axios'
 import StudentCard from './components/StudentCard'
 import StudentList from './components/StudentList'
 import InputForm from './components/InputForm'
+import './App.css';
+
 import { useSelector, useDispatch } from 'react-redux'
 
 export default () => {
 
   return (
-    <div>
-      <h2>Students</h2>
+    <div className="Topic">
+      <h2 className="Text">Students</h2>
       <StudentList />
       <InputForm  />
     </div>

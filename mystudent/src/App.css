@@ -1,6 +1,11 @@
 .App {
   text-align: center;
 }
+.Text {
+
+  font-family: Arial, Helvetica, sans-serif;
+  color: blue;
+}
 
 .App-logo {
   height: 40vmin;
@@ -36,3 +41,4 @@
     transform: rotate(360deg);
   }
 }
+
