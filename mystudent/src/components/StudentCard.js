@@ -18,8 +18,24 @@ const StudentCard = props => {
     await axios.put(`https://localhost/api/students/${props. generation}`, form)
     dispatch({ type: 'UPDATE_STUDENT',  generation: props. generation, Student: {...form,  generation: props. generation} })
     }
- 
-                             
+
+    return (
+
+        <div>
+            <div>
+                <p>{props.generation}</p>
+                <p>{props.idStudent }</p>
+                <p>{props.name }</p>
+                <p>{props.surname }</p>
+                <p>{props.faculty }</p>
+                <p>{props.advisor }</p>
+            </div>
+            <div>
+                <div onClick={updateStudent}>Update</div>
+                <div onClick={deleteStudent}>Delete</div>
+            </div>
+        </div>
+    )                          
 }
 
 export default StudentCard;
