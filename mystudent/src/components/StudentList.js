@@ -13,7 +13,7 @@ const StudentList = props => {
 
     const getStudents = async () => {
 
-        const result = await axios.get(`http://localhost/api/students`)
+        const result = await axios.get(`http://localhost:8000/api/students`)
         const action = { type: 'GET_STUDENTS' , students: result.data };
         dispatch(action)
     }

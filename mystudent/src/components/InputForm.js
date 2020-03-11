@@ -13,7 +13,7 @@ const InputForm = props => {
 
     const addStudent = async () => {
 
-    await axios.post(`http://localhost/api/students/`, form)
+    await axios.post(`http://localhost:8000/api/students/`, form)
 
     dispatch({
         type: 'ADD_STUDENT', student: {

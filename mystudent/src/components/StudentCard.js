@@ -9,14 +9,14 @@ const StudentCard = props => {
     const dispatch = useDispatch();
 
     const deleteStudent = async () => {
-        await axios.delete(`https://localhost/api/students/${props. generation}`)
-        dispatch({ type: 'DELETE_STUDENT', generation: props. generation })
+        await axios.delete(`https://localhost:8000/api/students/${props.generation}`)
+        dispatch({ type: 'DELETE_STUDENT', generation: props.generation })
     }
 
     const updateStudent = async () => {
 
-    await axios.put(`https://localhost/api/students/${props. generation}`, form)
-    dispatch({ type: 'UPDATE_STUDENT',  generation: props. generation, Student: {...form,  generation: props. generation} })
+        await axios.put(`https://localhost:8000/api/students/${props.generation}`, form)
+        dispatch({ type: 'UPDATE_STUDENT', generation: props.generation, Student: { ...form, generation: props.generation } })
     }
 
     return (
@@ -24,18 +24,19 @@ const StudentCard = props => {
         <div>
             <div>
                 <p>{props.generation}</p>
-                <p>{props.idStudent }</p>
-                <p>{props.name }</p>
-                <p>{props.surname }</p>
-                <p>{props.faculty }</p>
-                <p>{props.advisor }</p>
+                <p>{props.idStudent}</p>
+                <p>{props.name}</p>
+                <p>{props.surname}</p>
+                <p>{props.faculty}</p>
+                <p>{props.advisor}</p>
             </div>
             <div>
-                <div onClick={updateStudent}>Update</div>
-                <div onClick={deleteStudent}>Delete</div>
+                <button onClick={updateStudent}>Update</button>
+                <button onClick={deleteStudent}>Delete</button>
             </div>
+
         </div>
-    )                          
+    )
 }
 
 export default StudentCard;
