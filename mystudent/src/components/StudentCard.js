@@ -1,7 +1,7 @@
 import React from 'react';
 import './StudentCard.css';
 import axios from 'axios';
-import {  useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 const StudentCard = props => {
 
@@ -24,10 +24,10 @@ const StudentCard = props => {
             <div className="Top-up">
                 GEN : {props.generation} <br />
                 ID : {props.idStudent} <br />
-               Name : {props.name} <br />
+                Name : {props.name} <br />
                 Surname : {props.surname} <br />
                 Faculty : {props.faculty} <br />
-               Advisor :  {props.advisor} <br />
+                Advisor :  {props.advisor} <br />
             </div>
             <div>
                 <button className="Button" onClick={updateStudent}>Update</button>
