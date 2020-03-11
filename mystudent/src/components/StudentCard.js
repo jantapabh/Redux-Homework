@@ -1,7 +1,7 @@
 import React from 'react';
 import './StudentCard.css';
 import axios from 'axios';
-import { usrDispatch, useSelector, useDispatch } from 'react-redux';
+import {  useSelector, useDispatch } from 'react-redux';
 
 const StudentCard = props => {
 
@@ -9,14 +9,14 @@ const StudentCard = props => {
     const dispatch = useDispatch();
 
     const deleteStudent = async () => {
-        await axios.delete(`https://localhost:8000/api/students/${props.generation}`)
+        await axios.delete(`http://localhost:8000/api/students/${props.generation}`)
         dispatch({ type: 'DELETE_STUDENT', generation: props.generation })
     }
 
     const updateStudent = async () => {
 
-        await axios.put(`https://localhost:8000/api/students/${props.generation}`, form)
-        dispatch({ type: 'UPDATE_STUDENT', generation: props.generation, Student: { ...form, generation: props.generation } })
+        await axios.put(`http://localhost:8000/api/students/${props.generation}`, form)
+        dispatch({ type: 'UPDATE_STUDENT', generation: props.generation, student: { ...form, generation: props.generation } })
     }
 
     return (
@@ -31,8 +31,8 @@ const StudentCard = props => {
                 <p>{props.advisor}</p>
             </div>
             <div>
-                <button onClick={() => updateStudent(props.generation)}>Update</button>
-                <button onClick={() => deleteStudent(props.generation)}>Delete</button>
+                <button onClick={updateStudent}>Update</button>
+                <button onClick={deleteStudent}>Delete</button>
             </div>
 
         </div>
