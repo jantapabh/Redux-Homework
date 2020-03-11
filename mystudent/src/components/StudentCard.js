@@ -21,7 +21,7 @@ const StudentCard = props => {
 
     return (
         <div>
-            <div>
+            <div className="List">
                 <p>{props.generation}</p>
                 <p>{props.idStudent}</p>
                 <p>{props.name}</p>
