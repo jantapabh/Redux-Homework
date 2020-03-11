@@ -10,7 +10,7 @@ import { useSelector, useDispatch } from 'react-redux'
 export default () => {
 
   return (
-    <div className="Topic">
+    <div>
       <h2 className="Text">Students</h2>
       <StudentList />
       <InputForm  />
