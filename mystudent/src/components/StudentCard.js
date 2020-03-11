@@ -20,7 +20,6 @@ const StudentCard = props => {
     }
 
     return (
-
         <div>
             <div>
                 <p>{props.generation}</p>
