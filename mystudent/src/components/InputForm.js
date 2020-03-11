@@ -48,6 +48,24 @@ return (
                     </td>
                 </tr>
                 <tr>
+                    <td>Surname</td>
+                    <td>
+                        <input className='input' type="text" onChange={(e) => dispatch({ type: 'CHANGE_SURNAME', surname: e.target.value })} /> <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>faculty</td>
+                    <td>
+                        <input className='input' type="text" onChange={(e) => dispatch({ type: 'CHANGE_NAME', name: e.target.value })} /> <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Advisor</td>
+                    <td>
+                        <input className='input' type="text" onChange={(e) => dispatch({ type: 'CHANGE_NAME', name: e.target.value })} /> <br />
+                    </td>
+                </tr>
+                <tr>
                     <td></td>
                     <td>
                         <button className='btn' onClick={() => addStudent()}>CREATE</button>
