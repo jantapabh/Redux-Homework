@@ -31,8 +31,8 @@ const StudentCard = props => {
                 <p>{props.advisor}</p>
             </div>
             <div>
-                <button onClick={updateStudent}>Update</button>
-                <button onClick={deleteStudent}>Delete</button>
+                <button onClick={() => updateStudent(props.generation)}>Update</button>
+                <button onClick={() => deleteStudent(props.generation)}>Delete</button>
             </div>
 
         </div>
