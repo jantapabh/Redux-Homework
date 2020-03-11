@@ -20,18 +20,18 @@ const StudentCard = props => {
     }
 
     return (
-        <div>
-            <div className="List">
-                <p>{props.generation}</p>
-                <p>{props.idStudent}</p>
-                <p>{props.name}</p>
-                <p>{props.surname}</p>
-                <p>{props.faculty}</p>
-                <p>{props.advisor}</p>
+        <div className="List">
+            <div className="Top-up">
+                GEN : {props.generation} <br />
+                ID : {props.idStudent} <br />
+               Name : {props.name} <br />
+                Surname : {props.surname} <br />
+                Faculty : {props.faculty} <br />
+               Advisor :  {props.advisor} <br />
             </div>
             <div>
-                <button onClick={updateStudent}>Update</button>
-                <button onClick={deleteStudent}>Delete</button>
+                <button className="Button" onClick={updateStudent}>Update</button>
+                <button className="Button" onClick={deleteStudent}>Delete</button>
             </div>
 
         </div>

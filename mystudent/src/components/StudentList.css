@@ -1,7 +1,8 @@
-.Text {
-
-    font-family: Arial, Helvetica, sans-serif;
-    color: blue;
-
-
+.Button {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: bisque;
 }

@@ -26,43 +26,43 @@ const InputForm = props => {
 
 return (
     <div>
-        <h2>AddStudent</h2>
+        <h2 className="Add" >AddStudent</h2>
         <table>
             <tbody>
                 <tr>
                     <td>GENERAION</td>
                     <td>
-                        <input className='input' type="number" onChange={(e) => dispatch({ type: 'CHANGE_GENERATION', generation: e.target.value })} />
+                        <input className='Input-text' type="number" onChange={(e) => dispatch({ type: 'CHANGE_GENERATION', generation: e.target.value })} />
                     </td>
                 </tr>
                 <tr>
                     <td>ID</td>
                     <td>
-                        <input className='text' type="number" onChange={(e) => dispatch({ type: 'CHANGE_ID', idStudent: e.target.value })} />
+                        <input className='Input-text' type="number" onChange={(e) => dispatch({ type: 'CHANGE_ID', idStudent: e.target.value })} />
                     </td>
                 </tr>
                 <tr>
                     <td>Name</td>
                     <td>
-                        <input className='input' type="text" onChange={(e) => dispatch({ type: 'CHANGE_NAME', name: e.target.value })} /> <br />
+                        <input className='Input-text' type="text" onChange={(e) => dispatch({ type: 'CHANGE_NAME', name: e.target.value })} /> <br />
                     </td>
                 </tr>
                 <tr>
                     <td>Surname</td>
                     <td>
-                        <input className='input' type="text" onChange={(e) => dispatch({ type: 'CHANGE_SURNAME', surname: e.target.value })} /> <br />
+                        <input className='Input-text' type="text" onChange={(e) => dispatch({ type: 'CHANGE_SURNAME', surname: e.target.value })} /> <br />
                     </td>
                 </tr>
                 <tr>
                     <td>faculty</td>
                     <td>
-                        <input className='input' type="text" onChange={(e) => dispatch({ type: 'CHANGE_FACULTY', faculty: e.target.value })} /> <br />
+                        <input className='Input-text' type="text" onChange={(e) => dispatch({ type: 'CHANGE_FACULTY', faculty: e.target.value })} /> <br />
                     </td>
                 </tr>
                 <tr>
                     <td>Advisor</td>
                     <td>
-                        <input className='input' type="text" onChange={(e) => dispatch({ type: 'CHANGE_ADVISOR', advisor: e.target.value })} /> <br />
+                        <input className='Input-text' type="text" onChange={(e) => dispatch({ type: 'CHANGE_ADVISOR', advisor: e.target.value })} /> <br />
                     </td>
                 </tr>
                 <tr>
