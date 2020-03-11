@@ -23,17 +23,32 @@ const StudentList = props => {
 
         getStudents()
 
+  }, [])
 
-    }, [])
+  if(!students || !students.length)
+
+  return (
+
+    <h1>Not Student Now</h1>
+  )
+
+  return (
+
+    <div>
+
+        students.map((student, index) => {
+
+            <div key={index} style={{margin: 5}}>
+
+                <StudentCard {...student} updateStudent={() => props.updateStudent(student.generation)} deleteStudent = {() => props.deleteStudent(student.generation)} />
+                </div>
+        })
+
+
+        </div>
+
+  )
     
-    
-
-
-
-
-
-
-
 }
 
 export default StudentList;
