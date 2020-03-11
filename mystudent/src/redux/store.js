@@ -41,7 +41,7 @@ const studentReducer = (students = [], action) => {
         case 'ADD_STUDENT':
             return [...students, action.student]
         case 'DELETE_STUDENT':
-            return students.filter(student => +dtudent.generation !== +action.generation)
+            return students.filter(student => +student.generation !== +action.generation)
         case 'UPDATE_STUDENT':
             return students.map(student => {
                 if (+student.generation === +action.generation)
