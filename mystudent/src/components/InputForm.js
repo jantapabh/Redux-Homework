@@ -56,13 +56,13 @@ return (
                 <tr>
                     <td>faculty</td>
                     <td>
-                        <input className='input' type="text" onChange={(e) => dispatch({ type: 'CHANGE_NAME', name: e.target.value })} /> <br />
+                        <input className='input' type="text" onChange={(e) => dispatch({ type: 'CHANGE_FACULTY', faculty: e.target.value })} /> <br />
                     </td>
                 </tr>
                 <tr>
                     <td>Advisor</td>
                     <td>
-                        <input className='input' type="text" onChange={(e) => dispatch({ type: 'CHANGE_NAME', name: e.target.value })} /> <br />
+                        <input className='input' type="text" onChange={(e) => dispatch({ type: 'CHANGE_ADVISOR', advisor: e.target.value })} /> <br />
                     </td>
                 </tr>
                 <tr>
