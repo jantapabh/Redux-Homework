@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import StudentCard from './StudentCard';
 import './StudentList.css';
-import axios from ' axios'
+import axios from 'axios'
 import {useSelector, useDispatch } from 'react-redux'
 
 
@@ -11,8 +11,7 @@ const StudentList = props => {
     console.log('Student = = = ' +students);
     const dispatch = useDispatch();
 
-
-    const getStudents = async => {
+    const getStudents = async () => {
 
         const result = await axios.get(`http://localhost/api/students`)
         const action = { type: 'GET_STUDENTS' , students: result.data };
@@ -34,15 +33,16 @@ const StudentList = props => {
 
   return (
 
-    <div>
+    <div>{
 
-        students.map((student, index) => {
+        students.map((student, index) => (
 
             <div key={index} style={{margin: 5}}>
 
                 <StudentCard {...student} updateStudent={() => props.updateStudent(student.generation)} deleteStudent = {() => props.deleteStudent(student.generation)} />
                 </div>
-        })
+        ))
+        }
 
 
         </div>

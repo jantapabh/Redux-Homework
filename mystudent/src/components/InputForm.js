@@ -17,7 +17,7 @@ const InputForm = props => {
 
     dispatch({
         type: 'ADD_STUDENT', student: {
-            id: student.length > 0 ? student[student.length - 1].id + 1 : 0,
+            id: students.length > 0 ? students[students.length - 1].id + 1 : 0,
             ...form
         }
     })
