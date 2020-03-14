@@ -6,6 +6,15 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'
 import {store} from './redux/store'
 
+
+const AppWithRouter = () =>{
+
+<BrowserRouter>
+    <App />
+  </BrowserRouter>
+
+}
+
 ReactDOM.render(
     
     <Provider store={store}>
