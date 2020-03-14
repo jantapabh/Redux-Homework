@@ -15,11 +15,11 @@ import LoginForm from './components/LoginForm'
 
 const routing = (
 
-    <Provider store={store}>
-        <BrowserRouter>
+    
+        <div>
             <App />
-        </BrowserRouter>
-    </Provider>
+        </div>
+   
 
 )
 
