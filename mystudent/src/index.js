@@ -4,21 +4,25 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'
-import {store} from './redux/store'
+import { store } from './redux/store'
+import {BrowserRouter, Router, Switch} from 'react-router-dom';
 
 
-const AppWithRouter = () =>{
 
-<BrowserRouter>
-    <App />
-  </BrowserRouter>
+// const AppWithRouter = () => {
 
-}
+//     <BrowserRouter>
+//         <App />
+//     </BrowserRouter>
+
+// }
 
 ReactDOM.render(
-    
+
     <Provider store={store}>
-        <App />
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
     </Provider>
     , document.getElementById('root'));
 
