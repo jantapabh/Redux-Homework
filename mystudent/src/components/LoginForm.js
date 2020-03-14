@@ -12,10 +12,12 @@ const LoginForm = () => {
       <h1>Login Form</h1>
 
       <div>
+          <form action="post" method="post">
 
-Hiii
-
-
+Usename : <input type="text" name="username" placeholder="Put Your Username" />
+Password: <input type="password" name="password" placeholder="Put YourPassword" />
+<input type="submit" value="Submit" />
+</form>
       </div>
       
   </div>
