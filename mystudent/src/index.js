@@ -5,26 +5,25 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'
 import { store } from './redux/store'
-import {BrowserRouter, Router, Switch} from 'react-router-dom';
+import {BrowserRouter , Router, Switch, Link} from 'react-router-dom';
+import StudentList from './components/StudentList'
+import InputForm from './components/InputForm';
+import LoginForm from './components/LoginForm'
 
 
 
-// const AppWithRouter = () => {
 
-//     <BrowserRouter>
-//         <App />
-//     </BrowserRouter>
-
-// }
-
-ReactDOM.render(
+const routing = (
 
     <Provider store={store}>
         <BrowserRouter>
             <App />
         </BrowserRouter>
     </Provider>
-    , document.getElementById('root'));
+
+)
+
+ReactDOM.render(routing, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

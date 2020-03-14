@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { Component,useState, useEffect } from 'react'
 import axios from 'axios'
 import StudentCard from './components/StudentCard'
 import StudentList from './components/StudentList'
