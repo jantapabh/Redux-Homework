@@ -3,6 +3,7 @@ import StudentCard from './StudentCard';
 import './StudentList.css';
 import axios from 'axios'
 import {useSelector, useDispatch } from 'react-redux'
+import InputForm from './InputForm'
 
 // ส่วนแสดงรายชื่อนักเรียนทั้งหมดที่มาจาก server
 
@@ -39,9 +40,13 @@ const StudentList = props => {
         students.map((student, index) => (
 
             <div key={index} style={{margin: 5}}>
-
                 <StudentCard {...student} updateStudent={() => props.updateStudent(student.generation)} deleteStudent = {() => props.deleteStudent(student.generation)} />
-                </div>
+        
+            </div>
+            <div>
+             <InputForm />
+             </div>
+                
         ))
         }
 

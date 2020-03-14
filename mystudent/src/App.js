@@ -24,7 +24,6 @@ const App = () => {
   return (
     
     <div className="Main">
-      <h2 className="Text">Students</h2>
       <Provider store={store}>
       <BrowserRouter> 
       <Switch>
