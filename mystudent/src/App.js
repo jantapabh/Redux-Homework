@@ -42,13 +42,13 @@ const App = () => {
         </BrowserRouter>
 
         <FacebookLoginWithButton
-          appId="1206715649505081"
+          appId="526159711615139"
           autoLoad
           fields="name,email,picture"
           onClick={componentClicked}
           callback={responseFacebook}
           icon="fa-facebook" />
-          
+
       </Provider>
     </div>
 
