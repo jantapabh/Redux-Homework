@@ -1,3 +1,5 @@
+import StudentCard from './StudentCard'
+import StudentList from './StudentList'
 require('tls').DEFAULT_MIN_VERSION = 'TLSv1'   // since TLSv1.3 default disable v1.0 
 const express = require('express');
 const soap = require('soap');
@@ -8,22 +10,36 @@ const router = express.Router()
 app.use(bodyParser.urlencoded({extended: false}), router)
 app.use(bodyParser.json, router)
 
-const out = `
-<html>
-<body>
-  <h2>PSU Passport Authentication (SOAP) </h2>
- <form action="/" method="post">
- Username: <input type="text" name="username" /> <br>
- Password: <input type="password" name="password" /> <br>
- <input type="submit" value="Submit">
-</form>
-</body>
-</html> 
-`
 
-router.route('/')
+// const out = `
+
+// <html>
+// <body>
+//   <h2>PSU Passport Authentication (SOAP) </h2>
+//  <form action="/" method="post">
+//  Username: <input type="text" name="username" /> <br>
+//  Password: <input type="password" name="password" /> <br>
+//  <input type="submit" value="Submit">
+// </form>
+// </body>
+// </html> 
+// `
+
+const studentList = () => {
+
+    return(
+        <div>
+            <StudentList />
+            <StudentCard />
+            </div>
+    );
+
+}
+
+
+router.route('/studentlist')
    .get((req, res) => {
-       res.send(out)
+       res.send({studentList})
    })
    .post((req, res) => {
        soap.createClient(url, (err, client) => {
@@ -40,7 +56,8 @@ router.route('/')
                    console.error(err);
                    else {
                        console.log(response);
-                       res.send(response);
+                       router.route('/studentlist')
+                      
                    }
                });
            }
