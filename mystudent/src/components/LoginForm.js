@@ -10,7 +10,6 @@ const LoginForm = props => {
 
     const login = async () => {
         const res = await axios.post('/api/psu', { username, password });
-
         setLoginStatus(JSON.stringify(res.data))
     }
 
@@ -26,7 +25,7 @@ const LoginForm = props => {
                 <input type='password' onChange={e => setPassword(e.target.value)} />
             </div>
             <div>
-                <button onClick={login}>Login</button>
+                <button type="submit" onClick={login}>Login</button>
             </div>
             <div style={{ color: 'blue' }}>
                 {loginStatus}

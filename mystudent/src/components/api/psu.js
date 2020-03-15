@@ -1,8 +1,11 @@
-import * as soap from 'soap';
+import soap from 'soap'
+
+const soap = require('soap')
 
 const PSU_URL = 'https://passport.psu.ac.th/authentication/authentication.asmx?wsdl';
 
 async function loginPSUPassport(psuPassport, password) {
+
     return new Promise((resolve, reject) => {
       soap.createClient(PSU_URL, (err, client) => {
         if (err) return reject(err);
@@ -22,6 +25,7 @@ async function loginPSUPassport(psuPassport, password) {
   }
 
 export default async (req, res) => {
+
     const { username, password } = req.body;
     const result = await loginPSUPassport(username, password);
     console.log(result)
