@@ -5,7 +5,7 @@ import FacebookLoginWithButton from 'react-facebook-login';
 
 const url = 'https://passport.psu.ac.th/authentication/authentication.asmx?wsdl';
 
-
+console.log(url);
 
 const responseFacebook = (response) => {
     console.log(response);
@@ -30,7 +30,7 @@ const LoginForm = () => {
 
         <div className="Main">
             <h1>Login Form</h1>
-            <div>
+            <div className="Main">
                 <form action="post" method="post">
                     Usename : <input type="text" name="username" placeholder="Put Your Username" /><br />
                     Password: <input type="password" name="password" placeholder="Put YourPassword" /><br />
@@ -38,15 +38,17 @@ const LoginForm = () => {
                 </form>
             </div>
 
-            
+        <Link to={'/studentlist'}>
         <FacebookLoginWithButton
           appId="526159711615139"
           autoLoad
           fields="name,email,picture"
           onClick={componentClicked}
           callback={responseFacebook}
-          icon="fa-facebook" />
-
+          icon="fa-facebook">
+          </FacebookLoginWithButton>
+          </Link>
+}
         </div>
 
     );

@@ -3,6 +3,8 @@ import './StudentCard.css';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 // ส่วนจัดการ update และ delete ข้อมูลของนักเรียน
+
+
 const StudentCard = props => {
 
     const form = useSelector(state => state.form)
