@@ -30,13 +30,15 @@ const App = () => {
 
     actions.getLoginStatus().then(res => setLoading(false));
 
+    // เมือ่โหลดหน้าเสร็จให้ไปที่ url ที่เก็บ session อยู่
+
   }, []);
 
   if (loading)
     return "Loading ..."
 
   if (!auth.accessToken && !auth.psuInfo)
-  
+
     return (
       <div>
         <LoginForm />
