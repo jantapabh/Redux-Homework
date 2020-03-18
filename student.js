@@ -3,6 +3,12 @@ let app = express()
 let bodyParser = require('body-parser');
 let cors = require('cors')
 let router = express.Router()
+let ngrok = require('ngrok');
+
+
+let authRoutes = require('./routes/auth');
+let fbRoutes = require('./routes/fb');
+let psuRoute = require('./routes/psu');
 
 app.use(cors());
 
@@ -151,7 +157,8 @@ router.route('/auth/facebook/login/callback')
 .get(fbRoutes.loginCallback);
 
 router.route('/auth/psu')
-.get(psuRoutes.login);
+.get(psuRoute.login);
+
 
 app.use("*", (req, res) => res.status(404).send('404 Not found'));
 
