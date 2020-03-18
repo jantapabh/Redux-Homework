@@ -17,11 +17,8 @@ let router = express.Router()
 // session is not define
 
 app.use(cors({origin: ['http://localhost:3000'], methods: ['GET', 'POST'], credentials: true}));
-app.use(
-    session({ secret: 'keyboard cat',
-     cookie: {maxAge: 60000}, 
-     resave: false, saveUninitialized: false })
-     )
+app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 },
+   resave : false, saveUninitialized: false }))
 
 //ส่วนการทำงานการดึงค่าจาก API
 
