@@ -9,6 +9,11 @@ import LoginForm from './components/LoginForm'
 import { store } from './redux/store'
 import { Provider } from 'react-redux'
 import axios from 'axios'
+import { bindActionCreators } from 'redux'
+
+
+
+axios.defaults.withCredentials = true
 
 
 
@@ -17,43 +22,35 @@ import axios from 'axios'
 const App = () => {
 
 
-
-  const [login, setLogin] = useState(false)
-  const [user, setUser] = useState(' ')
-  const [passWord, setPassword] = useState(' ')
-
-
-  const getUser = async () => {
-
-    const result = await axios.get('http://localhost:80')
-    console.log(result.GetStaffDetailsResult.string)
-
-  }
+  const [loading, setLoading] = useState(true)
+  const auth = useSelector(state => state.Auth);
+  const actions = bindActionCreators({ ...StudentActions, ...AuthActions }, useDispatch());
 
   useEffect(() => {
 
-getUser()
+    actions.getLoginStatus().then(res => setLoading(false));
 
+  }, []);
 
-  }, [])
+  if (loading)
+    return "Loading ..."
 
-
-   
+  if (!auth.accessToken && !auth.psuInfo)
+  
+    return (
+      <div>
+        <LoginForm />
+      </div>
+    )
 
   return (
-    <div className="Main">
-      <Provider store={store}>
-        <BrowserRouter>
-          <Switch>
-            <Route exact path="/" component={LoginForm} />
-            <Route exact path="/studentlist" component={StudentList} />
-            <Route exact path="/studentlist" component={InputForm} />
-          </Switch>
-        </BrowserRouter>
-      </Provider>
+    <div>
+      <StudentList />
+      <InputForm />
+      <button onClick={() => actions.logout()}>Log Out!!</button>
     </div>
 
   )
-  }
+}
 
 export default App;
