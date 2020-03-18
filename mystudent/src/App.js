@@ -21,7 +21,6 @@ axios.defaults.withCredentials = true
 
 const App = () => {
 
-
   const [loading, setLoading] = useState(true)
   const auth = useSelector(state => state.Auth);
   const actions = bindActionCreators({ ...StudentActions, ...AuthActions }, useDispatch());
