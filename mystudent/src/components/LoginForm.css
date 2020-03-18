@@ -4,3 +4,10 @@
     justify-content: center;
     display: flex;
 }
+
+.middle{
+
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
