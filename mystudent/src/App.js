@@ -3,13 +3,12 @@ import axios from 'axios'
 import StudentCard from './components/StudentCard'
 import StudentList from './components/StudentList'
 import InputForm from './components/InputForm'
-import { useSelector, useDispatch } from 'react-redux'
-import { Route, Switch, BrowserRouter } from 'react-router-dom'
+import { useSelector, useDispatch, Provider } from 'react-redux'
+
 import LoginForm from './components/LoginForm'
 import { store } from './redux/store'
-import { Provider } from 'react-redux'
-import axios from 'axios'
 import { bindActionCreators } from 'redux'
+import { AuthActions, StudentActions } from '../src/redux/store';
 
 
 
@@ -39,17 +38,22 @@ const App = () => {
   if (!auth.accessToken && !auth.psuInfo)
 
     return (
+      <Provider>
       <div>
         <LoginForm />
       </div>
+      </Provider>
     )
 
   return (
-    <div>
+ 
+      <Provider>
+           <div>
       <StudentList />
       <InputForm />
       <button onClick={() => actions.logout()}>Log Out!!</button>
     </div>
+    </Provider>
 
   )
 }

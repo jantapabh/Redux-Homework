@@ -5,9 +5,10 @@ import StudentList from './StudentList'
 import InputForm from './InputForm'
 import FacebookLogin from 'react-facebook-login';
 import './LoginForm.css';
-import { bindActionCreators } from 'react-redux/node_modules/redux';
+// import { bindActionCreators } from 'react-redux/node_modules/redux';
 import { AuthActions } from '../redux/store';
 import { useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux'
 import config from '../config'
 
 

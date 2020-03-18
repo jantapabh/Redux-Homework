@@ -1,6 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from "../../node_modules/redux";
 import logger from 'redux-logger';
 import axios from 'axios'
+import config from '../config'
 
 //ส่วนของการยืนยันตัวตน
 
@@ -11,6 +12,8 @@ const initAuthData = {
     psuInfo: null
 
 }
+
+
 
 export const AuthActions = {
     getLoginStatus: () => async (dispatch) => {
@@ -34,7 +37,28 @@ export const AuthActions = {
     }
 
 }
+export const StudentActions = {
+    getLoginStatus: () => async (dispatch) => {
+        const res = await axios.get(`${config.apiUrl}/auth`);
+        dispatch({ type: 'GET_LOGIN_STATUS', payload: res.data })
+    },
 
+    loginPSU: (username, password) => async (dispatch) => {
+        const res = await axios.post(`${config.apiUrl}/auth/psu`, { username, password });
+        const { stdId, fname, lname, id, type } = res.data;
+
+        if (stdId.length > 0)
+            dispatch({ type: 'LOGIN_PSU', payload: res.data })
+    },
+    logout: () => async (dispatch) => {
+
+
+        const res = await axios.get(`${config.apiUrl}/auth/logout`);
+        dispatch({ type: 'LOGOUT' })
+
+    }
+
+}
 const AuthReducer = (data = initAuthData, action) => {
 
     switch (action.type) {
