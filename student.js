@@ -153,8 +153,7 @@ router.route('/students/:student_generation')
 })
 
 
-//ส่วนที่เพิ่ม
-
+//ส่วนที่เพิ่มทำการ route ไปยังหน้าต่าง ๆ ที่เรากำหนด
 
 router.route('/auth')
 .get(authRoutes.index);
