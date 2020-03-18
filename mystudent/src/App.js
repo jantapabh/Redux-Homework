@@ -16,6 +16,10 @@ import { Provider } from 'react-redux'
 
 const App = () => {
 
+  const [login, setLogin] = useState(false)
+  
+
+
   return (
 
     <div className="Main">
@@ -31,6 +35,6 @@ const App = () => {
     </div>
 
   )
-}
+  }
 
 export default App;

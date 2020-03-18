@@ -7,44 +7,38 @@ import FacebookLogin from 'react-facebook-login';
 import './LoginForm.css';
 
 
-
 const LoginForm = () => {
 
     const [account, setAccount] = useState(' ')
 
-const responseFacebook = (response) => {
+    const responseFacebook = (response) => {
 
-    console.log(response);
-    setAccount(response)
-}
+        console.log(response);
+        // setAccount(response)
+    }
 
-const componentClicked = () => {
-    console.log("Clicked!")
-}
+    const componentClicked = () => {
+        console.log("Clicked!")
+    }
 
-useEffect(() => {
+    useEffect(() => {
 
 
-    responseFacebook();
+        responseFacebook();
 
-},[])
+    }, [])
 
 
     return (
-       
-            <div className="middle">
-                <FacebookLogin
-                    appId="526159711615139"
-                    autoLoad={true}
-                    fields="name,email,picture"
-                    onClick={componentClicked}
-                    callback={responseFacebook}
-                  />
-                
-                <div>
-                   account name :   {account}
-         
-        </div>
+
+        <div className="middle">
+            <FacebookLogin
+                appId="526159711615139"
+                autoLoad={true}
+                fields="name,email,picture"
+                onClick={componentClicked}
+                callback={responseFacebook}
+            />
         </div>
     )
 }

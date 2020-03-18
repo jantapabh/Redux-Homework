@@ -9,6 +9,7 @@ app.use(bodyParser.urlencoded({extended: false}), router)
 app.use(bodyParser.json, router)
 
 const out = `
+
 <html>
 <body>
   <h2>PSU Passport Authentication (SOAP) </h2>
@@ -24,10 +25,14 @@ const out = `
 router.route('/')
    .get((req, res) => {
        res.send(out)
+    //    res.route('/')
    })
    .post((req, res) => {
+
        soap.createClient(url, (err, client) => {
+
            if (err) console.error(err);
+
            else {
                let user = {}
                user.username = req.body.username
