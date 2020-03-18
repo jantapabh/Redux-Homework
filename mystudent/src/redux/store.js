@@ -14,7 +14,6 @@ const initAuthData = {
 
 export const AuthActions = {
     getLoginStatus: () => async (dispatch) => {
-
         const res = await axios.get(`${config.apiUrl}/auth`);
         dispatch({ type: 'GET_LOGIN_STATUS', payload: res.data })
     },
@@ -28,7 +27,7 @@ export const AuthActions = {
     },
     logout: () => async (dispatch) => {
 
-        
+
         const res = await axios.get(`${config.apiUrl}/auth/logout`);
         dispatch({ type: 'LOGOUT' })
 
