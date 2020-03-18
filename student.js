@@ -134,6 +134,25 @@ router.route('/students/:student_generation')
     res.json({ message: 'Student Deleted : ' + req.params.student_generation });
 })
 
+
+//ส่วนที่เพิ่ม
+
+
+router.route('/auth')
+.get(authRoutes.index);
+
+router.route('/auth/logout')
+.get(authRoutes.logout);
+
+router.route('/auth/facebook')
+.get(fbRoutes.loginUrl);
+
+router.route('/auth/facebook/login/callback')
+.get(fbRoutes.loginCallback);
+
+router.route('/auth/psu')
+.get(psuRoutes.login);
+
 app.use("*", (req, res) => res.status(404).send('404 Not found'));
 
 app.listen(8000, () => { console.log('server is running') })

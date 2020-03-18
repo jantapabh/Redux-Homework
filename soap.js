@@ -34,6 +34,7 @@ router.route('/')
            if (err) console.error(err);
 
            else {
+               
                let user = {}
                user.username = req.body.username
                user.password = req.body.password
