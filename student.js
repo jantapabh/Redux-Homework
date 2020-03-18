@@ -1,8 +1,6 @@
 let express = require('express')
-let app = express()
 let bodyParser = require('body-parser');
 let cors = require('cors')
-let router = express.Router()
 let ngrok = require('ngrok');
 
 
@@ -10,7 +8,15 @@ let authRoutes = require('./routes/auth');
 let fbRoutes = require('./routes/fb');
 let psuRoute = require('./routes/psu');
 
-app.use(cors());
+
+let app = express()
+let router = express.Router()
+
+
+app.use(cors({origin: ['http://localhost:3000'], methods: ['GET', 'POST'], credentials: true}));
+app.use(session({ secret: 'keyboard cat', cookie: {maxAge: 60000}, resave: false, saveUninitialized: false }))
+
+//ส่วนการทำงานการดึงค่าจาก API
 
 app.use('/api', bodyParser.json(), router)
 app.use('/api', bodyParser.urlencoded({
