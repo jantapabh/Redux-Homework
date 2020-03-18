@@ -38,6 +38,7 @@ export const AuthActions = {
 
 }
 export const StudentActions = {
+    
     getLoginStatus: () => async (dispatch) => {
         const res = await axios.get(`${config.apiUrl}/auth`);
         dispatch({ type: 'GET_LOGIN_STATUS', payload: res.data })

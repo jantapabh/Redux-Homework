@@ -22,8 +22,10 @@
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "ngrok": "^3.2.7",
     "nodemon": "^2.0.2",
     "redux-logger": "^3.0.6",
+    "session": "^0.1.0",
     "soap": "^0.31.0"
   }
 }

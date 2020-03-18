@@ -4,6 +4,7 @@ let cors = require('cors')
 let ngrok = require('ngrok');
 
 
+
 let authRoutes = require('./routes/auth');
 let fbRoutes = require('./routes/fb');
 let psuRoute = require('./routes/psu');
@@ -14,7 +15,8 @@ let router = express.Router()
 
 
 app.use(cors({origin: ['http://localhost:3000'], methods: ['GET', 'POST'], credentials: true}));
-app.use(session({ secret: 'keyboard cat', cookie: {maxAge: 60000}, resave: false, saveUninitialized: false }))
+app.use(
+    session({ secret: 'keyboard cat', cookie: {maxAge: 60000}, resave: false, saveUninitialized: false }))
 
 //ส่วนการทำงานการดึงค่าจาก API
 
