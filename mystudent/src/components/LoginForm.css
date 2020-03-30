@@ -1,6 +1,12 @@
+body {
+
+    background-color: silver;
+}
+
+
 .Main {
 
-    align-items: center;
+ 
     justify-content: center;
     display: flex;
 }
@@ -10,4 +16,41 @@
     display: flex;
     justify-content: center;
     margin-top: 10px;
+}
+h1 {
+    display: flex;
+    justify-content: center;
+    background-color: cadetblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 20px;
+  
+}
+.topic {
+
+    font-size: 1.5em;
+    background-color: coral;
+    display: flex;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 5px;
+    margin: 5px;
+}
+.last {
+    border-bottom: violet;
+    box-shadow: saddlebrown;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    border-style: dotted;
+    margin: 20px;
+    height: 280px;
+}
+.M {
+    display: flex;
+    justify-content: space-around;
+    margin-left: -20px;
+    padding-left: -20px;
+    
 }
